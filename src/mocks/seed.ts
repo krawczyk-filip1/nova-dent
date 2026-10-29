@@ -1,0 +1,117 @@
+import type { Employee, Service, TimeBlock } from '@/types/models'
+
+export const seedServices: Service[] = [
+  {
+    id: 'svc-przeglad',
+    name: 'Przegląd i konsultacja',
+    description: 'Badanie zębów i dziąseł, plan leczenia z kosztorysem.',
+    durationMin: 30,
+    priceGrosze: 150_00,
+    priceFrom: false,
+    active: true,
+  },
+  {
+    id: 'svc-higienizacja',
+    name: 'Higienizacja',
+    description: 'Skaling, piaskowanie i polerowanie.',
+    durationMin: 60,
+    priceGrosze: 350_00,
+    priceFrom: false,
+    active: true,
+  },
+  {
+    id: 'svc-wypelnienie',
+    name: 'Wypełnienie kompozytowe',
+    description: 'Leczenie ubytku na jednej powierzchni zęba.',
+    durationMin: 45,
+    priceGrosze: 300_00,
+    priceFrom: true,
+    active: true,
+  },
+  {
+    id: 'svc-kanalowe',
+    name: 'Leczenie kanałowe',
+    description: 'Pod mikroskopem, cena za jeden kanał.',
+    durationMin: 90,
+    priceGrosze: 900_00,
+    priceFrom: true,
+    active: true,
+  },
+  {
+    id: 'svc-wybielanie',
+    name: 'Wybielanie nakładkowe',
+    description: 'Indywidualne nakładki i preparat na dwa tygodnie.',
+    durationMin: 60,
+    priceGrosze: 1200_00,
+    priceFrom: false,
+    active: true,
+  },
+  {
+    id: 'svc-ekstrakcja',
+    name: 'Usunięcie zęba',
+    description: 'Zabieg w znieczuleniu miejscowym.',
+    durationMin: 30,
+    priceGrosze: 350_00,
+    priceFrom: true,
+    active: true,
+  },
+  {
+    id: 'svc-fluoryzacja',
+    name: 'Fluoryzacja',
+    description: 'Lakierowanie zębów preparatem z fluorem.',
+    durationMin: 15,
+    priceGrosze: 80_00,
+    priceFrom: false,
+    active: false,
+  },
+]
+
+export const seedEmployees: Employee[] = [
+  {
+    id: 'emp-kowalska',
+    name: 'Anna Kowalska',
+    title: 'lek. dent.',
+    serviceIds: ['svc-przeglad', 'svc-wypelnienie', 'svc-kanalowe', 'svc-ekstrakcja'],
+    schedule: {
+      0: null,
+      1: { start: '08:00', end: '16:00' },
+      2: { start: '08:00', end: '16:00' },
+      3: { start: '08:00', end: '16:00' },
+      4: { start: '08:00', end: '16:00' },
+      5: { start: '08:00', end: '14:00' },
+      6: null,
+    },
+  },
+  {
+    id: 'emp-wisniewski',
+    name: 'Piotr Wiśniewski',
+    title: 'lek. dent.',
+    serviceIds: ['svc-przeglad', 'svc-wypelnienie', 'svc-ekstrakcja'],
+    schedule: {
+      0: null,
+      1: { start: '10:00', end: '18:00' },
+      2: null,
+      3: { start: '10:00', end: '18:00' },
+      4: null,
+      5: { start: '10:00', end: '18:00' },
+      6: { start: '09:00', end: '14:00' },
+    },
+  },
+  {
+    id: 'emp-zielinska',
+    name: 'Marta Zielińska',
+    title: 'hig. stom.',
+    serviceIds: ['svc-higienizacja', 'svc-wybielanie'],
+    schedule: {
+      0: null,
+      1: null,
+      2: { start: '08:00', end: '16:00' },
+      3: null,
+      4: { start: '08:00', end: '16:00' },
+      5: null,
+      6: { start: '09:00', end: '14:00' },
+    },
+  },
+]
+
+export const seedBlocks: TimeBlock[] = []

@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+@import '@fontsource-variable/figtree';
+
+@theme {
+  --font-sans: 'Figtree Variable', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-100: #f1ddd3;
+  --color-brand-600: #b4472a; /* przyciski, akcenty */
+  --color-brand-700: #9e3d23; /* linki, hover przycisków */
+  --color-brand-800: #7a2e1a; /* hover linków */
+
+  --color-sand-50: #fbf7f4; /* tło kart */
+  --color-sand-100: #f6eee8; /* tło sekcji */
+  --color-sand-200: #e9dfd9; /* tekst na ciemnej stopce */
+  --color-line: #d9ccc4; /* obramowania pól */
+
+  --color-ok-100: #e3f1e6; /* tło statusu „potwierdzona” */
+  --color-ok-800: #1f5a33; /* tekst statusu „potwierdzona” */
+
+  --color-ink: #2a211d; /* tekst główny, stopka */
+  --color-ink-muted: #5e504a; /* tekst drugorzędny */
+  --color-ink-soft: #6b5b54; /* podpisy */
+}
+
+@layer base {
+  html {
+    @apply bg-white font-sans text-ink antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-600;
+  }
+}
